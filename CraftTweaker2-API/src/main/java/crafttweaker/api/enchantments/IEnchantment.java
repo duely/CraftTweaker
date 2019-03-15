@@ -2,6 +2,7 @@ package crafttweaker.api.enchantments;
 
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.data.IData;
+import crafttweaker.api.item.IItemStack;
 import stanhebben.zenscript.annotations.*;
 
 @ZenClass("crafttweaker.enchantments.IEnchantment")
@@ -14,6 +15,10 @@ public interface IEnchantment {
     @ZenCaster
     @ZenMethod
     IData makeTag();
+
+    @ZenCaster
+    @ZenMethod
+    IData makeBookTag();
     
     @ZenGetter("level")
     int getLevel();
