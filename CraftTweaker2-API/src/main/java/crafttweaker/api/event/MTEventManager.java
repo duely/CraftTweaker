@@ -51,8 +51,7 @@ public class MTEventManager implements IEventManager {
     private final EventList<BlockHarvestDropsEvent> elBlockHarvestDrops = new EventList<>();
     private final EventList<PlayerBreakSpeedEvent> elPlayerBreakSpeed = new EventList<>();
     private final EventList<PlayerRightClickBlockEvent> elPlayerRightClickBlock = new EventList<>();
-    
-    
+
     /**
      * Clears all EventLists
      */
@@ -100,6 +99,37 @@ public class MTEventManager implements IEventManager {
         elBlockHarvestDrops.clear();
         elPlayerBreakSpeed.clear();
         elPlayerRightClickBlock.clear();
+        elAnimalTame.clear();
+        elFarmlandTrample.clear();
+        elEnchantmentLevelSet.clear();
+        elEntityMountEvent.clear();
+        elExplosionStartEvent.clear();
+        elExplosionDetonateEvent.clear();
+        elItemFishedEvent.clear();
+        elCropGrowPost.clear();
+        elCropGrowPre.clear();
+        elBlockPlace.clear();
+        elMobGriefing.clear();
+        elEntityTravelToDimension.clear();
+        elLivingDestroyBlock.clear();
+        elLivingExperienceDrop.clear();
+        elLivingKnockBack.clear();
+        elMinecartCollision.clear();
+        elMinecartInteract.clear();
+        elPlayerCloseContainer.clear();
+        elPlayerItemPickup.clear();
+        elPlayerVisibility.clear();
+        elPlayerLeftClickBlock.clear();
+        elPlayerRightClickEmpty.clear();
+        elPlayerRightClickItem.clear();
+/*        elSaplingGrowTree.clear();*/
+        elSleepingLocationCheck.clear();
+        elSleepingTimeCheck.clear();
+        elPotionBrewPre.clear();
+        elPotionBrewPost.clear();
+        elProjectileImpactArrow.clear();
+        elProjectileImpactFireball.clear();
+        elProjectileImpactThrowable.clear();
     }
     
     // ##########################
@@ -942,5 +972,630 @@ public class MTEventManager implements IEventManager {
         elAllowDespawn.publish(event);
     }
     
-    
+    // ########################
+    // ###  AnimalTameEvent ###
+    // ########################
+
+    private final EventList<AnimalTameEvent> elAnimalTame = new EventList<>();
+
+    @Override
+    public IEventHandle onAnimalTame(IEventHandler<AnimalTameEvent> ev) {
+        return elAnimalTame.add(ev);
+    }
+
+    public boolean hasAnimalTame() {
+        return elAnimalTame.hasHandlers();
+    }
+
+    public void publishAnimalTame (AnimalTameEvent event) {
+        elAnimalTame.publish(event);
+    }
+
+    // ##############################
+    // ###  FarmlandTrampleEvent  ###
+    // ##############################
+
+    private final EventList<BlockFarmlandTrampleEvent> elFarmlandTrample = new EventList<>();
+
+    @Override
+    public IEventHandle onFarmlandTrample(IEventHandler<BlockFarmlandTrampleEvent> ev) {
+        return elFarmlandTrample.add(ev);
+    }
+
+    public boolean hasFarmlandTrample() {
+        return elFarmlandTrample.hasHandlers();
+    }
+
+    public void publishFarmlandTrample(BlockFarmlandTrampleEvent event) {
+        elFarmlandTrample.publish(event);
+    }
+
+    // ##########################
+    // ###  CriticalHitEvent  ###
+    // ##########################
+
+    private final EventList<CriticalHitEvent> elCriticalHit = new EventList<>();
+
+    @Override
+    public IEventHandle onCriticalHit(IEventHandler<CriticalHitEvent> ev) {
+        return elCriticalHit.add(ev);
+    }
+
+    public boolean hasCriticalHit() {
+        return elCriticalHit.hasHandlers();
+    }
+
+    public void publishCriticalHit (CriticalHitEvent event) {
+        elCriticalHit.publish(event);
+    }
+
+    // ##################################
+    // ###  EnchantmentLevelSetEvent  ###
+    // ##################################
+
+    private final EventList<EnchantmentLevelSetEvent> elEnchantmentLevelSet = new EventList<>();
+
+    @Override
+    public IEventHandle onEnchantmentLevelSet(IEventHandler<EnchantmentLevelSetEvent> ev) {
+        return elEnchantmentLevelSet.add(ev);
+    }
+
+    public boolean hasEnchantmentLevelSet() {
+        return elEnchantmentLevelSet.hasHandlers();
+    }
+
+    public void publishEnchantmentLevelSet (EnchantmentLevelSetEvent event) {
+        elEnchantmentLevelSet.publish(event);
+    }
+
+    // ##########################
+    // ###  EntityMountEvent  ###
+    // ##########################
+
+    private final EventList<EntityMountEvent> elEntityMountEvent = new EventList<>();
+
+    @Override
+    public IEventHandle onEntityMount(IEventHandler<EntityMountEvent> ev) {
+        return elEntityMountEvent.add(ev);
+    }
+
+    public boolean hasEntityMount() {
+        return elEntityMountEvent.hasHandlers();
+    }
+
+    public void publishEntityMount(EntityMountEvent event) {
+        elEntityMountEvent.publish(event);
+    }
+
+    // #############################
+    // ###  ExplosionStartEvent  ###
+    // #############################
+
+    private final EventList<ExplosionStartEvent> elExplosionStartEvent = new EventList<>();
+
+    @Override
+    public IEventHandle onExplosionStart(IEventHandler<ExplosionStartEvent> ev) {
+        return elExplosionStartEvent.add(ev);
+    }
+
+    public boolean hasExplosionStart() {
+        return elExplosionStartEvent.hasHandlers();
+    }
+
+    public void publishExplosionStart(ExplosionStartEvent event) {
+        elExplosionStartEvent.publish(event);
+    }
+
+    // ################################
+    // ###  ExplosionDetonateEvent  ###
+    // ################################
+
+    private final EventList<ExplosionDetonateEvent> elExplosionDetonateEvent = new EventList<>();
+
+    @Override
+    public IEventHandle onExplosionDetonate(IEventHandler<ExplosionDetonateEvent> ev) {
+        return elExplosionDetonateEvent.add(ev);
+    }
+
+    public boolean hasExplosionDetonate() {
+        return elExplosionDetonateEvent.hasHandlers();
+    }
+
+    public void publishExplosionDetonate(ExplosionDetonateEvent event) {
+        elExplosionDetonateEvent.publish(event);
+    }
+
+    // #########################
+    // ###  ItemFishedEvent  ###
+    // #########################
+
+    private final EventList<ItemFishedEvent> elItemFishedEvent = new EventList<>();
+
+    @Override
+    public IEventHandle onItemFished(IEventHandler<ItemFishedEvent> ev) {
+        return elItemFishedEvent.add(ev);
+    }
+
+    public boolean hasItemFished() {
+        return elItemFishedEvent.hasHandlers();
+    }
+
+    public void publishItemFished(ItemFishedEvent event) {
+        elItemFishedEvent.publish(event);
+    }
+
+    // ##########################
+    // ###  CropGrowEventPre  ###
+    // ##########################
+
+    private final EventList<CropGrowPreEvent> elCropGrowPre = new EventList<>();
+
+    @Override
+    public IEventHandle onCropGrowPre(IEventHandler<CropGrowPreEvent> ev) {
+        return elCropGrowPre.add(ev);
+    }
+
+    public boolean hasCropGrowPre() {
+        return elCropGrowPre.hasHandlers();
+    }
+
+    public void publishCropGrowPre(CropGrowPreEvent event) {
+        elCropGrowPre.publish(event);
+    }
+
+    // ###########################
+    // ###  CropGrowEventPost  ###
+    // ###########################
+
+    private final EventList<CropGrowPostEvent> elCropGrowPost = new EventList<>();
+
+    @Override
+    public IEventHandle onCropGrowPost(IEventHandler<CropGrowPostEvent> ev) {
+        return elCropGrowPost.add(ev);
+    }
+
+    public boolean hasCropGrowPost() {
+        return elCropGrowPost.hasHandlers();
+    }
+
+    public void publishCropGrowPost(CropGrowPostEvent event) {
+        elCropGrowPost.publish(event);
+    }
+
+    // #########################
+    // ###  BlockPlaceEvent  ###
+    // #########################
+
+    private final EventList<BlockPlaceEvent> elBlockPlace = new EventList<>();
+
+    @Override
+    public IEventHandle onBlockPlace(IEventHandler<BlockPlaceEvent> ev) {
+        return elBlockPlace.add(ev);
+    }
+
+    public boolean hasBlockPlace() {
+        return elBlockPlace.hasHandlers();
+    }
+
+    public void publishBlockPlace(BlockPlaceEvent event) {
+        elBlockPlace.publish(event);
+    }
+
+    // #########################
+    // ###  MobGriefingEvent ###
+    // #########################
+
+    private final EventList<MobGriefingEvent> elMobGriefing = new EventList<>();
+
+    @Override
+    public IEventHandle onMobGriefing(IEventHandler<MobGriefingEvent> ev) {
+        return elMobGriefing.add(ev);
+    }
+
+    public boolean hasMobGriefing() {
+        return elMobGriefing.hasHandlers();
+    }
+
+    public void publishMobGriefing(MobGriefingEvent event) {
+        elMobGriefing.publish(event);
+    }
+
+    // #################################
+    // ###  EntityTravelToDimension  ###
+    // #################################
+
+    private final EventList<EntityTravelToDimensionEvent> elEntityTravelToDimension = new EventList<>();
+
+    @Override
+    public IEventHandle onEntityTravelToDimension(IEventHandler<EntityTravelToDimensionEvent> ev) {
+        return elEntityTravelToDimension.add(ev);
+    }
+
+    public boolean hasEntityTravelToDimension() {
+        return elEntityTravelToDimension.hasHandlers();
+    }
+
+    public void publishEntityTravelToDimension(EntityTravelToDimensionEvent event) {
+        elEntityTravelToDimension.publish(event);
+    }
+
+    // #################################
+    // ###  LivingDestroyBlockEvent  ###
+    // #################################
+
+    private final EventList<LivingDestroyBlockEvent> elLivingDestroyBlock = new EventList<>();
+
+    @Override
+    public IEventHandle onLivingDestroyBlock(IEventHandler<LivingDestroyBlockEvent> ev) {
+        return elLivingDestroyBlock.add(ev);
+    }
+
+    public boolean hasLivingDestroyBlock() {
+        return elLivingDestroyBlock.hasHandlers();
+    }
+
+    public void publishLivingDestroyBlock(LivingDestroyBlockEvent event) {
+        elLivingDestroyBlock.publish(event);
+    }
+
+    // #################################
+    // ###  LivingExperienceDropEvent  ###
+    // #################################
+
+    private final EventList<LivingExperienceDropEvent> elLivingExperienceDrop = new EventList<>();
+
+    @Override
+    public IEventHandle onLivingExperienceDrop(IEventHandler<LivingExperienceDropEvent> ev) {
+        return elLivingExperienceDrop.add(ev);
+    }
+
+    public boolean hasLivingExperienceDrop() {
+        return elLivingExperienceDrop.hasHandlers();
+    }
+
+    public void publishLivingExperienceDrop(LivingExperienceDropEvent event) {
+        elLivingExperienceDrop.publish(event);
+    }
+
+    // ##############################
+    // ###  LivingKnockBackEvent  ###
+    // ##############################
+
+    private final EventList<LivingKnockBackEvent> elLivingKnockBack = new EventList<>();
+
+    @Override
+    public IEventHandle onLivingKnockBack(IEventHandler<LivingKnockBackEvent> ev) {
+        return elLivingKnockBack.add(ev);
+    }
+
+    public boolean hasLivingKnockBack() {
+        return elLivingKnockBack.hasHandlers();
+    }
+
+    public void publishLivingKnockBack(LivingKnockBackEvent event) {
+        elLivingKnockBack.publish(event);
+    }
+
+    // ###########################
+    // ###  LootingLevelEvent  ###
+    // ###########################
+
+    private final EventList<LootingLevelEvent> elLootingLevel = new EventList<>();
+
+    @Override
+    public IEventHandle onLootingLevel(IEventHandler<LootingLevelEvent> ev) {
+        return elLootingLevel.add(ev);
+    }
+
+    public boolean hasLootingLevel() {
+        return elLootingLevel.hasHandlers();
+    }
+
+    public void publishLootingLevel(LootingLevelEvent event) {
+        elLootingLevel.publish(event);
+    }
+
+    // ################################
+    // ###  MinecartCollisionEvent  ###
+    // ################################
+
+    private final EventList<MinecartCollisionEvent> elMinecartCollision = new EventList<>();
+
+    @Override
+    public IEventHandle onMinecartCollision(IEventHandler<MinecartCollisionEvent> ev) {
+        return elMinecartCollision.add(ev);
+    }
+
+    public boolean hasMinecartCollision() {
+        return elMinecartCollision.hasHandlers();
+    }
+
+    public void publishMinecartCollision(MinecartCollisionEvent event) {
+        elMinecartCollision.publish(event);
+    }
+
+    // ###############################
+    // ###  MinecartInteractEvent  ###
+    // ###############################
+
+    private final EventList<MinecartInteractEvent> elMinecartInteract = new EventList<>();
+
+    @Override
+    public IEventHandle onMinecartInteract(IEventHandler<MinecartInteractEvent> ev) {
+        return elMinecartInteract.add(ev);
+    }
+
+    public boolean hasMinecartInteract() {
+        return elMinecartInteract.hasHandlers();
+    }
+
+    public void publishMinecartInteract(MinecartInteractEvent event) {
+        elMinecartInteract.publish(event);
+    }
+
+    // ###################################
+    // ###  PlayerCloseContainerEvent  ###
+    // ###################################
+
+    private final EventList<PlayerCloseContainerEvent> elPlayerCloseContainer = new EventList<>();
+
+    @Override
+    public IEventHandle onPlayerCloseContainer(IEventHandler<PlayerCloseContainerEvent> ev) {
+        return elPlayerCloseContainer.add(ev);
+    }
+
+    public boolean hasPlayerCloseContainer() {
+        return elPlayerCloseContainer.hasHandlers();
+    }
+
+    public void publishPlayerCloseContainer(PlayerCloseContainerEvent event) {
+        elPlayerCloseContainer.publish(event);
+    }
+
+    // ###############################
+    // ###  PlayerItemPickupEvent  ###
+    // ###############################
+
+    private final EventList<PlayerItemPickupEvent> elPlayerItemPickup = new EventList<>();
+
+    @Override
+    public IEventHandle onPlayerItemPickup(IEventHandler<PlayerItemPickupEvent> ev) {
+        return elPlayerItemPickup.add(ev);
+    }
+
+    public boolean hasPlayerItemPickup() {
+        return elPlayerItemPickup.hasHandlers();
+    }
+
+    public void publishPlayerItemPickup(PlayerItemPickupEvent event) {
+        elPlayerItemPickup.publish(event);
+    }
+
+    // ###############################
+    // ###  PlayerVisibilityEvent  ###
+    // ###############################
+
+    private final EventList<PlayerVisibilityEvent> elPlayerVisibility = new EventList<>();
+
+    @Override
+    public IEventHandle onPlayerVisibility(IEventHandler<PlayerVisibilityEvent> ev) {
+        return elPlayerVisibility.add(ev);
+    }
+
+    public boolean hasPlayerVisibility() {
+        return elPlayerVisibility.hasHandlers();
+    }
+
+    public void publishPlayerVisibility(PlayerVisibilityEvent event) {
+        elPlayerVisibility.publish(event);
+    }
+
+    // ###################################
+    // ###  PlayerLeftClickBlockEvent  ###
+    // ###################################
+
+    private final EventList<PlayerLeftClickBlockEvent> elPlayerLeftClickBlock = new EventList<>();
+
+    @Override
+    public IEventHandle onPlayerLeftClickBlock(IEventHandler<PlayerLeftClickBlockEvent> ev) {
+        return elPlayerLeftClickBlock.add(ev);
+    }
+
+    public boolean hasPlayerLeftClickBlock() {
+        return elPlayerLeftClickBlock.hasHandlers();
+    }
+
+    public void publishPlayerLeftClickBlock(PlayerLeftClickBlockEvent event) {
+        elPlayerLeftClickBlock.publish(event);
+    }
+
+    // ####################################
+    // ###  PlayerRightClickEmptyEvent  ###
+    // ####################################
+
+    private final EventList<PlayerRightClickEmptyEvent> elPlayerRightClickEmpty = new EventList<>();
+
+    @Override
+    public IEventHandle onPlayerRightClickEmpty(IEventHandler<PlayerRightClickEmptyEvent> ev) {
+        return elPlayerRightClickEmpty.add(ev);
+    }
+
+    public boolean hasPlayerRightClickEmpty() {
+        return elPlayerRightClickEmpty.hasHandlers();
+    }
+
+    public void publishPlayerRightClickEmpty(PlayerRightClickEmptyEvent event) {
+        elPlayerRightClickEmpty.publish(event);
+    }
+
+    // ####################################
+    // ###  PlayerRightClickItemEvent  ###
+    // ####################################
+
+    private final EventList<PlayerRightClickItemEvent> elPlayerRightClickItem = new EventList<>();
+
+    @Override
+    public IEventHandle onPlayerRightClickItem(IEventHandler<PlayerRightClickItemEvent> ev) {
+        return elPlayerRightClickItem.add(ev);
+    }
+
+    public boolean hasPlayerRightClickItem() {
+        return elPlayerRightClickItem.hasHandlers();
+    }
+
+    public void publishPlayerRightClickItem(PlayerRightClickItemEvent event) {
+        elPlayerRightClickItem.publish(event);
+    }
+
+    // ##############################
+    // ###  SaplingGrowTreeEvent  ###
+    // ##############################
+
+/*    private final EventList<SaplingGrowTreeEvent> elSaplingGrowTree = new EventList<>();
+
+    @Override
+    public IEventHandle onSaplingGrowTree(IEventHandler<SaplingGrowTreeEvent> ev) {
+        return elSaplingGrowTree.add(ev);
+    }
+
+    public boolean hasSaplingGrowTree() {
+        return elSaplingGrowTree.hasHandlers();
+    }
+
+    public void publishSaplingGrowTree(SaplingGrowTreeEvent event) {
+        elSaplingGrowTree.publish(event);
+    }*/
+
+    // ####################################
+    // ###  SleepingLocationCheckEvent  ###
+    // ####################################
+
+    private final EventList<SleepingLocationCheckEvent> elSleepingLocationCheck = new EventList<>();
+
+    @Override
+    public IEventHandle onSleepingLocationCheck(IEventHandler<SleepingLocationCheckEvent> ev) {
+        return elSleepingLocationCheck.add(ev);
+    }
+
+    public boolean hasSleepingLocationCheck() {
+        return elSleepingLocationCheck.hasHandlers();
+    }
+
+    public void publishSleepingLocationCheck(SleepingLocationCheckEvent event) {
+        elSleepingLocationCheck.publish(event);
+    }
+
+    // ################################
+    // ###  SleepingTimeCheckEvent  ###
+    // ################################
+
+    private final EventList<SleepingTimeCheckEvent> elSleepingTimeCheck = new EventList<>();
+
+    @Override
+    public IEventHandle onSleepingTimeCheck(IEventHandler<SleepingTimeCheckEvent> ev) {
+        return elSleepingTimeCheck.add(ev);
+    }
+
+    public boolean hasSleepingTimeCheck() {
+        return elSleepingTimeCheck.hasHandlers();
+    }
+
+    public void publishSleepingTimeCheck(SleepingTimeCheckEvent event) {
+        elSleepingTimeCheck.publish(event);
+    }
+
+    // ############################
+    // ###  PotionBrewPreEvent  ###
+    // ############################
+
+    private final EventList<PotionBrewPreEvent> elPotionBrewPre = new EventList<>();
+
+    @Override
+    public IEventHandle onPotionBrewPre(IEventHandler<PotionBrewPreEvent> ev) {
+        return elPotionBrewPre.add(ev);
+    }
+
+    public boolean hasPotionBrewPre() {
+        return elPotionBrewPre.hasHandlers();
+    }
+
+    public void publishPotionBrewPre(PotionBrewPreEvent event) {
+        elPotionBrewPre.publish(event);
+    }
+
+    // #############################
+    // ###  PotionBrewPostEvent  ###
+    // #############################
+
+    private final EventList<PotionBrewPostEvent> elPotionBrewPost = new EventList<>();
+
+    @Override
+    public IEventHandle onPotionBrewPost(IEventHandler<PotionBrewPostEvent> ev) {
+        return elPotionBrewPost.add(ev);
+    }
+
+    public boolean hasPotionBrewPost() {
+        return elPotionBrewPost.hasHandlers();
+    }
+
+    public void publishPotionBrewPost(PotionBrewPostEvent event) {
+        elPotionBrewPost.publish(event);
+    }
+
+    // ####################################
+    // ###  ProjectileImpactArrowEvent  ###
+    // ####################################
+
+    private final EventList<ProjectileImpactArrowEvent> elProjectileImpactArrow = new EventList<>();
+
+    @Override
+    public IEventHandle onProjectileImpactArrow(IEventHandler<ProjectileImpactArrowEvent> ev) {
+        return elProjectileImpactArrow.add(ev);
+    }
+
+    public boolean hasProjectileImpactArrow() {
+        return elProjectileImpactArrow.hasHandlers();
+    }
+
+    public void publishProjectileImpactArrow(ProjectileImpactArrowEvent event) {
+        elProjectileImpactArrow.publish(event);
+    }
+
+    // #######################################
+    // ###  ProjectileImpactFireballEvent  ###
+    // #######################################
+
+    private final EventList<ProjectileImpactFireballEvent> elProjectileImpactFireball = new EventList<>();
+
+    @Override
+    public IEventHandle onProjectileImpactFireball(IEventHandler<ProjectileImpactFireballEvent> ev) {
+        return elProjectileImpactFireball.add(ev);
+    }
+
+    public boolean hasProjectileImpactFireball() {
+        return elProjectileImpactFireball.hasHandlers();
+    }
+
+    public void publishProjectileImpactFireball(ProjectileImpactFireballEvent event) {
+        elProjectileImpactFireball.publish(event);
+    }
+
+    // ########################################
+    // ###  ProjectileImpactThrowableEvent  ###
+    // ########################################
+
+    private final EventList<ProjectileImpactThrowableEvent> elProjectileImpactThrowable = new EventList<>();
+
+    @Override
+    public IEventHandle onProjectileImpactThrowable(IEventHandler<ProjectileImpactThrowableEvent> ev) {
+        return elProjectileImpactThrowable.add(ev);
+    }
+
+    public boolean hasProjectileImpactThrowable() {
+        return elProjectileImpactThrowable.hasHandlers();
+    }
+
+    public void publishProjectileImpactThrowable(ProjectileImpactThrowableEvent event) {
+        elProjectileImpactThrowable.publish(event);
+    }
 }
